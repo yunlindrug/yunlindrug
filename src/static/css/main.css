@@ -124,20 +124,31 @@ body {
     position: fixed;
 }
 
-.pop{
-    background-color: transparent;
-    font-size: 28px;
-    font-weight: 600;
+.popover-arrow {
+    border-color: transparent;
+}
+
+.popover{
+    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.1));
+}
+
+.popover-body{
     color: #3F3F3F;
+    font-size: 18px;
+    font-weight: 550;
+    line-height: 26px;
+    letter-spacing: 2px;
   }
 
-.popover1 { 
-    margin: 0px; 
-    background-color: transparent;
-    font-size: 28px;
+.popover-header{
+    color: #fff;
+    font-size: 26px;
     font-weight: 600;
-    color: #3F3F3F;
-} 
+    margin: 0% 0% 0% 0%;
+    padding: 4% 29%;
+    background-color: #3B60BD;
+    letter-spacing: 2px;
+}
 
 .carousel-inner, .carousel, carousel-item {
     overflow:visible;
