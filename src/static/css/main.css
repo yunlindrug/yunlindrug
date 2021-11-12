@@ -54,11 +54,11 @@ body {
 
 .title-content-white{
     font-size: 24px;
-    font-weight: 500;
+    font-weight: bold;
+    color: #3F3F3F;
     letter-spacing: 3px;
     filter: drop-shadow(5px 10px 2px rgba(10, 3, 10, 0.1));
     background-color: #fff; 
-    color: #3B60BD; 
     padding: 1rem; 
     margin: 2rem;
 }
