@@ -74,10 +74,14 @@ function start() {
     //背景        
     sky1 = _this.physics.add.sprite(0, 0, 'sky').setOrigin(0, 0).refreshBody();
     sky2 = _this.physics.add.sprite(3840, 0, 'sky').setOrigin(0, 0).refreshBody();
+    sky1.setVelocityX(-600);
+    sky2.setVelocityX(-600);
 
     // 房子
     house1 = _this.physics.add.sprite(0, 0, 'house1').setOrigin(0, 0);
-    house2 = _this.physics.add.sprite(3500, 0, 'house2').setOrigin(0, 0);
+    house2 = _this.physics.add.sprite(3840, 0, 'house2').setOrigin(0, 0);
+    house1.setVelocityX(-800);
+    house2.setVelocityX(-800);
 
     // 時鐘
     clock = _this.add.image(1740, 26, 'clock').setOrigin(0, 0).setScale(0.7);
@@ -125,6 +129,12 @@ function start() {
     // 創造平台
     platforms = _this.physics.add.staticGroup();
     platforms.create(0, 900, 'ground').setOrigin(0, 0).refreshBody();
+
+    // 地板
+    ground1 = _this.physics.add.sprite(0, 900, 'ground').setOrigin(0, 0).refreshBody();
+    ground2 = _this.physics.add.sprite(3840, 900, 'ground').setOrigin(0, 0).refreshBody();
+    ground1.setVelocityX(-800);
+    ground2.setVelocityX(-800);
 
     //人物
     player = _this.physics.add.sprite(300, 470, 'runningMan').setOrigin(0, 0).setScale(0.45).refreshBody();
@@ -205,7 +215,7 @@ function resize() {
     }
 }
 
-var speed = -650; //隨著時間會越來越快
+var speed = -800; //隨著時間會越來越快
 function createOnefood(foodgroup, foodlist) {
     getfoodkey = Math.floor(Math.random() * foodlist.length);
     heights = [75, 100];
@@ -346,7 +356,8 @@ function finish() {
 
 function renew() {
     _this.scene.restart();
-    hearttime = 3
+    hearttime = 3;
+    speed = -800
     gameOver = false;
     document.getElementById("fail").style.display = "none";
     document.getElementById("pass").style.display = "none";
@@ -434,26 +445,27 @@ function update() {
     if (loadtime >= 2) {
 
         // 檢查食物超出邊界
-
         foodOverBorders()
-
-        // 背景移動
-        house1.setVelocityX(-800);
-        house2.setVelocityX(-800);
+        
         if (house1.body.x <= -3840) {
             house1.body.x = 3840;
         }
         if (house2.body.x <= -3840) {
             house2.body.x = 3840;
         }
-
-        sky1.setVelocityX(-600);
-        sky2.setVelocityX(-600);
+        
         if (sky1.body.x <= -3840) {
-            sky1.body.x = 3840;
+            sky1.body.x = 3800;
         }
         if (sky2.body.x <= -3840) {
-            sky2.body.x = 3840;
+            sky2.body.x = 3800;
+        }
+
+        if (ground1.body.x <= -3840) {
+            ground1.body.x = 3840;
+        }
+        if (ground2.body.x <= -3840) {
+            ground2.body.x = 3840;
         }
 
         // 人物屬性更新
