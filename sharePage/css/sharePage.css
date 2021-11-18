@@ -197,3 +197,21 @@ a:hover{
     letter-spacing: 3px;
     margin-bottom: 28px;
 }
+
+.bg-white-50{
+    background-color: #e6ebf7da;
+    width: 40vw;
+    padding: 26px;
+    font-size: 20px;
+    font-weight:600;
+    color: 3F3F3F;
+    letter-spacing: 3px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+}
+
+.bg-white-50 img{
+    width: 37px;
+    height: 37px;
+    margin-bottom: 10px;
+}
